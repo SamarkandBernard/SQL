@@ -1,4 +1,4 @@
-/* Here are some data about NASA astronauts, in this project I want to show you that I am capable of querying data in a large database. */
+/* Here are some data about NASA astronauts, in this project I want to show you that I am capable of creating table, selecting data and performing advanced queries in a large database. */
 CREATE TABLE astronauts(
    Name                TEXT PRIMARY KEY,
    Year                INTEGER,
@@ -381,7 +381,7 @@ INSERT INTO astronauts(Name,Year,GroupNum,Status,Birth_Date,Birth_Place,Gender,A
 /* Here I will select the totality of the data and order it by name */
 SELECT * FROM astronauts ORDER BY name;
 
-/* I would like to know how many astronauts I have in total */
+/* I would like to know how many astronauts I have in total in my database */
 SELECT COUNT(name) AS total_astronauts FROM astronauts;
 
 /* And I would like to know the repartition of genders in my data */
