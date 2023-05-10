@@ -1,25 +1,23 @@
--- Example query (PostgreSQL)
+-- In this project, I will code with the PostgreSQL language. I will query the Netflix's database to get what I'm looking for
 
---
+-- First, I would like to know how many movies I have in my database, without the TV shows.
 SELECT COUNT (*) 
 FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info" 
 WHERE type='Movie'
 ;
 
+-- Then, what is the date of the most recent movies/TV shows in my database ?
 SELECT MAX(release_year)
 FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
 ;
 
+-- Here, I want an alphabetical list of all the movies and TV shows.
 SELECT * 
 FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
 ORDER BY title
 ;
 
-SELECT *
-FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
-WHERE title = 'Bright Star'
-;
-
+-- Now, I want to join my two tables to know who is the Director of the movie named Bright Star
 SELECT n_t.show_id, type, director, title, description
 FROM "CharlotteChaze/BreakIntoTech"."netflix_people" n_p
 LEFT JOIN "CharlotteChaze/BreakIntoTech"."netflix_titles_info" n_t
@@ -27,6 +25,7 @@ ON n_p.show_id = n_t.show_id
 WHERE title = 'Bright Star'
 ;
 
+-- And here, I want to know which movie are the oldest with their date
 SELECT title, release_year
 FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
 WHERE type = 'Movie'
