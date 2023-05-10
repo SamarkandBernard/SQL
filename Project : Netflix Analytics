@@ -1,0 +1,35 @@
+-- Example query (PostgreSQL)
+
+--
+SELECT COUNT (*) 
+FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info" 
+WHERE type='Movie'
+;
+
+SELECT MAX(release_year)
+FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
+;
+
+SELECT * 
+FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
+ORDER BY title
+;
+
+SELECT *
+FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
+WHERE title = 'Bright Star'
+;
+
+SELECT n_t.show_id, type, director, title, description
+FROM "CharlotteChaze/BreakIntoTech"."netflix_people" n_p
+LEFT JOIN "CharlotteChaze/BreakIntoTech"."netflix_titles_info" n_t
+ON n_p.show_id = n_t.show_id
+WHERE title = 'Bright Star'
+;
+
+SELECT title, release_year
+FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
+WHERE type = 'Movie'
+ORDER BY release_year ASC
+LIMIT 2
+;
