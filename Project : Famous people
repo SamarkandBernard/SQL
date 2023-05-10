@@ -1,0 +1,105 @@
+CREATE TABLE movie_stars (id INTEGER PRIMARY KEY,
+    first_name TEXT,
+    last_name TEXT,
+    birthdate TEXT);
+
+INSERT INTO movie_stars (first_name,
+    last_name, birthdate)
+    VALUES ("Jack", "Nicholson", "22.04.1937");
+
+INSERT INTO movie_stars (first_name,
+    last_name, birthdate)
+    VALUES ("Jim", "Carrey", "17.01.1962");
+    
+INSERT INTO movie_stars (first_name,
+    last_name, birthdate)
+    VALUES ("Leonardo", "DiCaprio", "11.11.1974");
+
+INSERT INTO movie_stars (first_name,
+    last_name, birthdate)
+    VALUES ("Matt", "Damon", "08.10.1970");
+    
+INSERT INTO movie_stars (first_name,
+    last_name, birthdate)
+    VALUES ("Christopher", "Walken", "31.03.1943");
+
+INSERT INTO movie_stars (first_name,
+    last_name, birthdate)
+    VALUES ("Samuel L.", "Jackson", "21.12.1948");
+    
+INSERT INTO movie_stars (first_name,
+    last_name, birthdate)
+    VALUES ("Jeff", "Goldblum", "22.10.1952");
+    
+INSERT INTO movie_stars (first_name,
+    last_name, birthdate)
+    VALUES ("Jean-Paul", "Belmondo", "09.04.1933");
+    
+INSERT INTO movie_stars (first_name,
+    last_name, birthdate)
+    VALUES ("Owen", "Wilson", "18.11.1968");
+    
+INSERT INTO movie_stars (first_name,
+    last_name, birthdate)
+    VALUES ("Tobey", "Maguire", "27.06.1975");
+    
+SELECT * FROM movie_stars;
+
+CREATE TABLE movies (
+  id INTEGER PRIMARY KEY,
+  star_id INTEGER,
+  title TEXT,
+  date TEXT
+);
+
+INSERT INTO movies (star_id, title, date)
+    VALUES (1, "The Departed", "2006");
+    
+INSERT INTO movies (star_id, title, date)
+    VALUES (3, "The Departed", "2006");
+    
+INSERT INTO movies (star_id, title, date)
+    VALUES (4, "The Departed", "2006");
+    
+INSERT INTO movies (star_id, title, date)
+    VALUES (3, "Catch Me If You Can", "2002");
+    
+INSERT INTO movies (star_id, title, date)
+    VALUES (2, "Truman Show", "1998");
+    
+INSERT INTO movies (star_id, title, date)
+    VALUES (5, "Catch Me If You Can", "2002");
+    
+INSERT INTO movies (star_id, title, date)
+    VALUES (6, "Django Unchained", "2012");
+    
+INSERT INTO movies (star_id, title, date)
+    VALUES (3, "Django Unchained", "2012");
+    
+INSERT INTO movies (star_id, title, date)
+    VALUES (7, "The Life Aquatic with Steve Zissou", "2004");
+    
+INSERT INTO movies (star_id, title, date)
+    VALUES (9, "The Life Aquatic with Steve Zissou", "2004");
+
+INSERT INTO movies (star_id, title, date)
+    VALUES (8, "Le Cerveau", "1969");
+    
+INSERT INTO movies (star_id, title, date)
+    VALUES (10, "The Great Gatsby", "2013");
+    
+INSERT INTO movies (star_id, title, date)
+    VALUES (3, "The Great Gatsby", "2013");
+    
+INSERT INTO movies (star_id, title, date)
+    VALUES (5, "Pulp Fiction", "2002");
+    
+INSERT INTO movies (star_id, title, date)
+    VALUES (6, "Pulp Fiction", "2012");
+
+SELECT first_name, last_name, title, date
+
+    FROM movie_stars as m_s
+    LEFT OUTER JOIN movies as m
+    ON m_s.id = m.star_id
+    ORDER BY first_name
