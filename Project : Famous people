@@ -1,3 +1,6 @@
+/* In this project, I want to join two tables together because they share the same IDs, in this example it would be Movie Stars with their movies they played in */
+
+/* First, I will create my table with the attributes needed from the actors */ 
 CREATE TABLE movie_stars (id INTEGER PRIMARY KEY,
     first_name TEXT,
     last_name TEXT,
@@ -45,6 +48,7 @@ INSERT INTO movie_stars (first_name,
     
 SELECT * FROM movie_stars;
 
+/* Then, my second table with the movies in which they played */
 CREATE TABLE movies (
   id INTEGER PRIMARY KEY,
   star_id INTEGER,
@@ -97,8 +101,8 @@ INSERT INTO movies (star_id, title, date)
 INSERT INTO movies (star_id, title, date)
     VALUES (6, "Pulp Fiction", "2012");
 
+/* Now that I've created my two table, I want to join them together, indeed they share the same IDs and I want to know who played in which movie */
 SELECT first_name, last_name, title, date
-
     FROM movie_stars as m_s
     LEFT OUTER JOIN movies as m
     ON m_s.id = m.star_id
