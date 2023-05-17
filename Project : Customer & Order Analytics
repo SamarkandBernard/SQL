@@ -57,4 +57,4 @@ AND orderid <> 'Order ID'
 SELECT product, SUM(quantity) as Total_Quantity, location
 FROM BIT_DB.FebSales
 WHERE location like '%Los Angeles%'
-GROUP BY product
+GROUP BY product 
