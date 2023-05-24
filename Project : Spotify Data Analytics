@@ -45,14 +45,14 @@ GROUP BY artist_name, track_name
 ORDER BY avg(danceability) DESC;
 
 /* Finally, my principal question was : What are the perfect artists using the most important parameters which are popularity, danceability and energy ? 
-Obviously, the answer is Ed Sheeran, he is the only one who has the best score in all these parameters. */
+Obviously, the answer is Ed Sheeran and Maneskin, they are the only one who have the best score with all these parameters. */
 
 SELECT artist_name, track_name
 ,avg(popularity) 
 ,avg(danceability)
 ,avg(energy)
 FROM BIT_DB.spotifydata
-WHERE popularity > 90
-AND danceability > 0.70
-AND energy > 0.80
+WHERE popularity >= 90
+AND danceability >= 0.70
+AND energy >= 0.80
 GROUP BY artist_name, track_name;
